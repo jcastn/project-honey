@@ -31,7 +31,7 @@ Quand le script Python est lancé depuis VSCode, il fonctionne sans désactiver 
 
 ---
 
-Une fois lancée, le logiciel apparait dans le gestionnaire des tâches.
+Une fois lancé, le logiciel apparait dans le gestionnaire des tâches.
 Les résultats s'affichent sur Discord ainsi que dans le fichier `projecthoney.txt`, sous cette forme : 
 
 ```
