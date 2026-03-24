@@ -1,9 +1,46 @@
 # project-honey
 
-⚠ WARNING – EDUCATIONAL PURPOSES ONLY ⚠
+Au hasard d’un cours de cybersécurité dans le cadre de mes études, j’ai eu l’occasion de travailler sur un projet autour de la sécurité informatique, mêlant développement, réseaux et analyse de vulnérabilités.
+L’objectif était d'étudier comment une macro exécutée à l’ouverture d’un document Word pourrait servir de vecteur d’installation d’un keylogger (enregistreur de frappes), puis analyser les mécanismes de collecte et d’exfiltration de données. Le tout dans un cadre strictement pédagogique, afin de comprendre ces techniques pour mieux s’en protéger.
 
-This repository is strictly for educational and cybersecurity research purposes. It is not intended for general use, and downloading or running this project may pose security risks.
+**⚠️ Avertissement Légal : Le code est fourni à des fins strictement éducatives et d'audit de sécurité. L'usage de ces outils sur un système tiers sans consentement explicite est illégal et passible de sanctions pénales.**
 
-If you are not explicitly involved in cybersecurity education or research, do not download or execute any files from this repository. Misuse could lead to unintended consequences, and we take no responsibility for any damages or legal implications.
+Le projet contenait 3 grandes parties : 
+- Le développement du cheval de Troie (en Python dans mon cas) 
+- La création de la macro (en Visual Basic)
+- L’exfiltration des données (via un Bot Discord)
 
-Proceed with caution.
+---
+## Explication du script Python   
+
+Le script Python qui compose le Project Honey, fonctionne comme suit : 
+
+On commence par importer plusieurs modules : 
+- `Pynput` → Enregistrer les touches
+- `Datetime` et `Time`→ Obtenir l’heure et gérer le temps
+- `OS` et `Platform` → Obtenir des infos sur l’OS et le materiel de l’utilisateur
+- `Discord` → Envoyer les données sur Discord
+
+Ensuite on prépare un message d’introduction (avec date et heure, nom du PC, OS…), et on enregistre pendant 15min toutes les touches pressées par l’utilisateur. 
+Chaque minute, il envoie un compte rendu de l’enregistrement sur discord avec le bot `Project Honey` et il enregistre aussi le tout dans un fichier `projecthoney.txt` se trouvant dans le dossier Documents de l’utilisateur (cela pourrait être n’importe ou sur le PC, mais je l’ai mis ici pour plus de simplicité).
+
+Enfin, j’ai créé l’executable `project-honey.exe` à partir du script en python, avec le module PyInstaller.
+- `pyinstaller --onefile --noconsole "C:\Users\[...]\ProjectHoney\main.py"`
+
+Quand le script Python est lancé depuis VSCode, il fonctionne sans désactiver l’antivirus, par contre quand il est sous forme d'exécutable (`.exe`), il ne fonctionne que lorsque l’anti-virus de l’ordinateur est désactivé.
+
+---
+
+Une fois lancée, le logiciel apparait dans le gestionnaire des tâches, ainsi que sur Discord et dans le fichier `projecthoney.txt` : 
+
+```
+------------------------------------------------------------------------
+Session du xx/xx/xxxx - xx:xx:xx
+User: xxxxx - OS : xxxxxxx xx.x.xxxxx - Hostname: PC-xxxxxx
+bonjour [Key-space]
+je [Key-space]
+tape [Key-space]
+du [Key-space]
+texte [Key-space]
+------------------------------------------------------------------------
+```
