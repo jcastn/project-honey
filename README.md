@@ -1,6 +1,6 @@
 # project-honey
 
-Au hasard d’un cours de cybersécurité dans le cadre de mes études, j’ai eu l’occasion de travailler sur un projet autour de la sécurité informatique, mêlant développement, réseaux et analyse de vulnérabilités.
+Lors d’un cours de cybersécurité dans le cadre de mes études, j’ai eu l’occasion de travailler sur un projet autour de la sécurité informatique, mêlant développement, réseaux et analyse de vulnérabilités.
 L’objectif était d'étudier comment une macro exécutée à l’ouverture d’un document Word pourrait servir de vecteur d’installation d’un keylogger (enregistreur de frappes), puis analyser les mécanismes de collecte et d’exfiltration de données. Le tout dans un cadre strictement pédagogique, afin de comprendre ces techniques pour mieux s’en protéger.
 
 **⚠️ Avertissement Légal : Le code est fourni à des fins strictement éducatives et d'audit de sécurité. L'usage de ces outils sur un système tiers sans consentement explicite est illégal et passible de sanctions pénales.**
